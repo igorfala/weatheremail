@@ -89,8 +89,12 @@ WSGI_APPLICATION = 'weatheremail.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': parser.get('db', 'name'),
+        'USER': parser.get('db', 'user'),
+        'PASSWORD': parser.get('db', 'password'),
+        'HOST': parser.get('db', 'host'),
+        'PORT': parser.get('db', 'port', fallback=''),
     }
 }
 
