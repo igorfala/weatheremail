@@ -10,17 +10,28 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
+import configparser
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(CURRENT_DIR)
+CONFIG_PATH = os.path.join(CURRENT_DIR, 'conf/weatheremail.conf')
 
+parser = configparser.ConfigParser()
+try:
+    with open(os.path.expanduser(CONFIG_PATH), 'r') as fp:
+        parser.read_file(fp)
+except (OSError, IOError) as e:
+    print("ERROR:  Failed to read %s: %s" % (CONFIG_PATH, str(e)))
+    sys.exit(1)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'aj1h!7!a7@&q9$p03^$)i92jf-azm3(f!tf!h3yubzd^fo!5(g'
+SECRET_KEY = parser.get('main', 'secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
