@@ -1,0 +1,10 @@
+*.swp
+.devrc-*
+virtualenv3*
+
+# MacOS turds
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+*/__pycache__/
