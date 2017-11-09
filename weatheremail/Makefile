@@ -4,7 +4,7 @@ PORT = 8081
 SHELL = /usr/bin/env bash
 TOPDIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 REQUIREMENTS := $(wildcard requirements*.txt)
-FLAKE_TARGETS := $(shell find $(TOPDIR) -type f -name '*.py')
+FLAKE_TARGETS := $(shell find $(TOPDIR) -type f -not -path '$(TOPDIR)/*/migrations*' -name '*.py')
 
 .PHONY: requirements $(REQUIREMENTS) flake $(FLAKE_TARGETS) test
 
