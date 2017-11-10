@@ -1,5 +1,6 @@
 HOST = 0.0.0.0
 PORT = 8081
+VERBOSITY = 1
 
 SHELL = /usr/bin/env bash
 TOPDIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
@@ -22,3 +23,6 @@ test: flake
 
 run:
 	python $(TOPDIR)/manage.py runserver $(HOST):$(PORT)
+
+populate_cities:
+	python $(TOPDIR)/manage.py populate_cities --verbosity $(VERBOSITY)

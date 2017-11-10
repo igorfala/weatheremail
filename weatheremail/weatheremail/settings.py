@@ -32,6 +32,7 @@ except (OSError, IOError) as e:
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = parser.get('main', 'secret_key')
+GOOGLE_KEY = parser.get('google', 'key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

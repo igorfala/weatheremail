@@ -8,3 +8,4 @@ virtualenv3*
 .LSOverride
 
 */__pycache__/
+**/__pycache__/
