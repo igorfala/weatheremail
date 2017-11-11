@@ -34,6 +34,14 @@ except (OSError, IOError) as e:
 SECRET_KEY = parser.get('main', 'secret_key')
 GOOGLE_KEY = parser.get('google', 'key')
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = parser.get('email', 'host')
+DEFAULT_FROM_EMAIL = parser.get('email', 'default_from')
+EMAIL_HOST_PASSWORD = parser.get('email', 'password')
+EMAIL_HOST_USER = parser.get('email', 'user')
+EMAIL_PORT = parser.get('email', 'port')
+EMAIL_USE_TLS = parser.get('email', 'use_tls')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
