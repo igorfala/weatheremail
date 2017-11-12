@@ -1,5 +1,7 @@
 HOST = 0.0.0.0
 PORT = 8081
+NEWSLETTERS = WD
+API_LIMIT = 10
 VERBOSITY = 1
 
 SHELL = /usr/bin/env bash
@@ -26,3 +28,6 @@ run:
 
 populate_cities:
 	python $(TOPDIR)/manage.py populate_cities --verbosity $(VERBOSITY)
+
+send_emails:
+	python $(TOPDIR)/manage.py send_emails --newsletter $(NEWSLETTERS) --api-limit $(API_LIMIT) --verbosity $(VERBOSITY)

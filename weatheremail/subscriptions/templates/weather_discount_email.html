@@ -1,0 +1,72 @@
+<html>
+
+<p><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Weather Discount Email</title>
+    <style>
+      #searchButton {
+      width: 100%;
+      }
+      .starter-template {
+      padding: 40px 25px;
+      }
+      .starter-template table {
+      margin-top: 15px;
+      }
+      .starter-template .alert {
+      margin-top: 1%;
+      }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head></p>
+
+<p><body></p>
+
+<p><table width="100%" cellpadding="0" cellspacing="0" bgcolor="e4e4e4"><tr><td></p>
+
+<p><table id="top-message" cellpadding="20" cellspacing="0" width="600" align="center">
+    </table><!-- top message -->
+      <p style="padding-right:5px" class="font-weight-bold"><b>{{ today.display_location.full }}</b></p>
+      <img style="padding-right:5px" src="{{ today.icon_url }}"/>
+      <br/>
+    <table id="main" cellpadding="0" cellspacing="15" bgcolor="ffffff" width="600" align="center">
+    </table><!-- main -->
+    <div id="output"></div>
+    <tr>
+<td>
+  <table id="content-4" cellpadding="0" cellspacing="0" align="center">
+      <tr>
+          <td width="180" valign="top">
+              <h5>Today's conditions</h5>
+              <p>{{ today.weather }}</p>
+            <br/>
+          </td>
+          <td width="15"></td>
+          <td width="180" valign="top">
+              <h5>Feels like</h5>
+              <p>{{today.feelslike_string}}</p>
+              <br/>
+          </td>
+          <td width="15"></td>
+          <td width="180" valign="top">
+              <h5>Wind</h5>
+              <p>{{today.wind_string}} {{ today.wind_dir }}</p>
+              <br/>
+          </td>
+      </tr>
+
+  </table><!-- content-4 -->
+</td>
+</tr><!-- content-4 -->
+    <table id="bottom-message" cellpadding="20" cellspacing="0" width="600" align="center">
+    </table><!-- bottom message --></p>
+  </br>
+  <p> Thanks for being loyal </p>
+<p></tr></td></table><!-- wrapper --></p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<p></body></p>
+
+<p></html>
+</p>

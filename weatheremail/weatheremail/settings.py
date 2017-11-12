@@ -33,6 +33,7 @@ except (OSError, IOError) as e:
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = parser.get('main', 'secret_key')
 GOOGLE_KEY = parser.get('google', 'key')
+WUNDERGROUND_KEY = parser.get('wunderground', 'key')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = parser.get('email', 'host')
