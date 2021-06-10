@@ -1,4 +1,4 @@
-Django==1.11.7
+Django==2.2.24
 flake8==3.5.0
 mccabe==0.6.1
 pycodestyle==2.3.1
@@ -9,7 +9,7 @@ async-timeout==2.0.0
 certifi==2017.11.5
 chardet==3.0.4
 decorator==4.1.2
-Django==1.11.7
+Django==2.2.24
 flake8==3.5.0
 googlemaps==2.5.1
 httplib2==0.10.3
